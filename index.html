@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Card - Stage 0</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <article data-testid="test-profile-card">
+    <div class="profile-avatar">
+        <figure>
+            <img 
+              src="/assets/Ibiwumi_Joseph_Oladotun.jpg" 
+              alt="Profile picture of Oladotun Joseph" 
+              data-testid="test-user-avatar"
+            >
+          </figure>
+    </div>
+   
+    <div class="profile-info">
+        <header>
+            <h2 data-testid="test-user-name">Oladotun Joseph</h2>
+          </header>
+    <p data-testid="test-user-bio">
+      Frontend developer passionate about creating responsive, accessible interfaces and smooth user experiences.
+    </p>
+
+    <p>
+      Current time (ms): 
+      <span data-testid="test-user-time" id="user-time"></span>
+    </p>
+
+    <nav data-testid="test-user-social-links">
+      <ul>
+        <li><a href="https://x.com/ThevJose" target="_blank" rel="noopener noreferrer" data-testid="test-user-social-x">Twitter</a></li>
+        <li><a href="https://github.com/Dotjos" target="_blank" rel="noopener noreferrer" data-testid="test-user-social-github">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/ibiwumi-joseph-51544b359/" target="_blank" rel="noopener noreferrer" data-testid="test-user-social-linkedin">LinkedIn</a></li>
+      </ul>
+    </nav>
+
+    <section data-testid="test-user-hobbies">
+      <h3>Hobbies</h3>
+      <ul>
+        <li>Coding</li>
+        <li>Playing football</li>
+        <li>Reading tech articles</li>
+        <li>Watching movies</li>
+      </ul>
+    </section>
+
+    <section data-testid="test-user-dislikes">
+      <h3>Dislikes</h3>
+      <ul>
+        <li>Procrastination</li>
+        <li>Untidy code</li>
+        <li>Slow internet</li>
+      </ul>
+    </section>
+</div>
+
+  </article>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
