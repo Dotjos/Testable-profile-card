@@ -37,6 +37,7 @@ This project was created as part of the **HNG Internship (Stage 0 - Frontend Tra
 
 ## 📁 Folder Structure
 
+```
 profile-card/
 ├── index.html
 ├── styles.css
@@ -44,6 +45,7 @@ profile-card/
 ├── assets/
 │ └── Ibiwumi_Joseph_Oladotun.jpg
 └── README.md
+```
 
 ---
 
