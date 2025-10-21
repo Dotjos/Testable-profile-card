@@ -35,6 +35,11 @@ main {
     list-style: disc;
   }
   
+ nav ul li{
+  line-height: normal;
+ }
+
+
   p,
   li {
     line-height: 1.6;
