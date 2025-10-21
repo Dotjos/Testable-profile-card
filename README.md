@@ -1,7 +1,7 @@
-# 🪪 HNG Stage 0 – Profile Card
+# 🪪 HNG – Profile Card
 
-A simple, accessible, and responsive **Profile Card** built with **semantic HTML**, **modern CSS**, and **vanilla JavaScript**.  
-This project was created as part of the **HNG Internship (Stage 0 - Frontend Track)** to demonstrate mastery of HTML semantics, accessibility, responsiveness, and basic interactivity.
+An accessible, responsive, and testable **multi-page website** built with **semantic HTML**, **modern CSS**, and **vanilla JavaScript**.  
+This project expands on **Stage 0 (Profile Card)** by adding **About Me** and **Contact Us** pages — featuring form validation, accessibility best practices, and dynamic navigation highlighting.
 
 ---
 
@@ -21,6 +21,10 @@ This project was created as part of the **HNG Internship (Stage 0 - Frontend Tra
 - ✅ Social links open in a new tab with `rel="noopener noreferrer"`
 - ✅ Keyboard navigable (focus styles visible)
 - ✅ Clean folder structure and maintainable code
+- ✅ Auto-highlight active navigation link using JavaScript
+- ✅ Contact form with full validation and accessible error messages
+- ✅ Keyboard-navigable UI with visible focus states
+- ✅ Consistent visual design and modular code
 
 ---
 
@@ -39,11 +43,19 @@ This project was created as part of the **HNG Internship (Stage 0 - Frontend Tra
 
 ```
 profile-card/
+profile-card/
 ├── index.html
-├── styles.css
-├── script.js
+├── about.html
+├── contact.html
+├── styles/
+│   ├── style.css
+│   ├── about.css
+│   └── contact.css
+├── scripts/
+│   ├── script.js
+│   └── contact.js
 ├── assets/
-│ └── Ibiwumi_Joseph_Oladotun.jpg
+│   └── Ibiwumi_Joseph_Oladotun.jpg
 └── README.md
 ```
 
@@ -52,6 +64,8 @@ profile-card/
 ## 🧩 Data Test IDs
 
 All visible elements include `data-testid` attributes for automated testing as required:
+
+🪪 Profile Card Page (index.html)
 
 | Element                | Data Test ID                 |
 | ---------------------- | ---------------------------- |
@@ -66,6 +80,33 @@ All visible elements include `data-testid` attributes for automated testing as r
 | Dislikes list          | `test-user-dislikes`         |
 
 ---
+
+🙋‍♂️ About Me Page (about.html)
+
+| Section                 | Data Test ID             |
+| ----------------------- | ------------------------ |
+| Bio                     | `test-about-bio`         |
+| Goals in program        | `test-about-goals`       |
+| Areas of low confidence | `test-about-confidence`  |
+| Note to future self     | `test-about-future-note` |
+| Extra thoughts          | `test-about-extra`       |
+
+---
+
+📬 Contact Page (contact.html)
+
+| Field Data      | Data Test ID                 |
+| --------------- | ---------------------------- |
+| Full name       | `test-contact-name`          |
+| Email           | `test-contact-email`         |
+| Subject         | `test-contact-subject`       |
+| Message         | `test-contact-message`       |
+| Submit button   | `test-contact-submit`        |
+| Error – Name    | `test-contact-error-name`    |
+| Error – Email   | `test-contact-error-email`   |
+| Error – Subject | `test-contact-error-subject` |
+| Error – Message | `test-contact-error-message` |
+| Success message | `test-contact-success`       |
 
 ## ⚙️ How to Run Locally
 
@@ -83,18 +124,50 @@ All visible elements include `data-testid` attributes for automated testing as r
 npx live-server
 ```
 
-💻 Implementation Notes
-The current time is generated using:
+## 💻 Implementation Notes
+
+- The **Profile Page** displays the current time dynamically using JavaScript (`Date.now()`).
+  The current time is generated using:
 
 ```js
 document.getElementById("user-time").textContent = Date.now();
 ```
 
+- **Navigation** links connect all three pages (`index.html`, `contact.html`, and `about.html`).
+- The **Contact Page** includes custom JavaScript validation:
+  - Checks all required fields before submission.
+  - Displays per-field error messages tied via `aria-describedby`.
+  - Shows a success confirmation when validation passes.
+- The **About Page** is fully semantic, using `<main>` and `<section>` elements with descriptive headings.
+- Separate CSS files (`style.css`, `contact.css`, `about.css`) manage styling per page.
+- All elements include `data-testid` attributes for testing and accessibility.
+
+---
+
+🧾 Form Validation & Accessibility
+✅ Form Validation Rules
+
+-All fields are required.
+
+-Email must follow a valid format → name@example.com.
+
+-Message must contain at least 10 characters.
+
+-Displays per-field error messages and a success confirmation after a valid submission.
+
+♿ Accessibility Guidelines
+
+-Each `<input/>` has a linked label using the for attribute (e.g., `<label for="email">Email</label>`).
+
+-Error messages are tied to inputs using aria-describedby for screen reader support.
+
+-All form elements are keyboard-accessible (focusable and navigable via Tab).
+
 Layout adjusts:
 
-Mobile: stacked vertically
+-Mobile: stacked vertically
 
-Tablet & Desktop: avatar on the left, text on the right
+-Tablet & Desktop: avatar on the left, text on the right
 
 👨🏽‍💻 Author
 Oladotun Joseph
