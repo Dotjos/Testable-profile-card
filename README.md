@@ -112,7 +112,7 @@ All visible elements include `data-testid` attributes for automated testing as r
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/your-username/profile-card.git
+   git clone https://github.com/Dotjos/Testable-profile-card
    cd profile-card
    Open the project
    Simply open the index.html file in your browser.
